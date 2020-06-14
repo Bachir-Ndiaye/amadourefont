@@ -1,0 +1,587 @@
+/*Définition du theme generale de la page web*/
+:root{
+    --main-theme: #60b0f4;
+}
+body, html{
+    padding: 0;
+    margin: 0;
+    font-family: 'Spartan', sans-serif;
+}
+
+/*FLASH NOTICE*/
+.flash-notice{
+    margin-top: 20px;
+    color:white;padding-top: 4px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #5271ff;
+}
+/*PRELOADER*/
+.preloader{
+    position: fixed;
+    z-index: 99;
+    padding-top: 250px;
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    justify-content: center;
+    justify-items: center;
+    background-color: white;
+}
+
+.img-top{
+    width: 350px;
+    position: absolute;
+    object-fit: contain;
+}
+
+.img-bottom{
+    padding-top: 6px;
+    width: 850px;
+    padding-right: 30px;
+    position: absolute;
+    object-fit: contain;
+}
+
+.preloader.hidden {
+    animation: fadeout 0s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeout {
+    100%{
+        opacity: 1;
+        visibility: hidden;
+    }
+    
+}
+/*NAVBAR CSS*/
+.play-button{
+    padding-bottom: 5px;
+    text-align: center;
+}
+.search{
+    display: block ruby;
+    width: 100%;
+    position: relative;
+    animation: mymove 5s infinite;
+}
+@keyframes mymove {
+    0%   {left: 0px;}
+    25%  {left: 50px;}
+    50%  {left: 25px;}
+    75%  {left: 50px}
+    100% {left: 0px;}
+}
+.search p{
+    color: #60b0f4;
+    font-size: 25px;
+}
+.exclamation-left, .exclamation-right{
+    font-size: x-large;
+    color:darkred;
+    padding: 0px 10px;
+}
+.linkedin-top i{
+    padding-top: 13px;
+    padding-left: 5px;
+    font-size: 45px;
+}
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
+.linkedin-top i:hover{
+    color:blue;
+}
+.navbar-section{
+    width: 100%;
+    z-index:1;
+    background-color: white;
+    position: fixed;
+    font-family: 'Spartan', sans-serif;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+.navbar-section .navbar .container-left-logo{
+    display: inline-flex;
+    justify-content: start;
+}
+.navbar-left a{
+     text-transform: uppercase;
+ }
+.container-left-logo h4{
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+#element-navbar:hover{
+    border-top: 4px solid #60b0f4;
+    color: black;
+}
+
+.container .competence{
+    display: ruby;
+}
+.ndiaye{
+    color: var(--main-theme);
+}
+.banner-project .row{
+    display: block;
+}
+
+.banner-project h1, .banner-project .row .col h2{
+    text-align: center;
+}
+#element-navbar{
+    color: var(--main-theme);
+    font-size: 18px;
+}
+
+.navbar .container h1{
+    padding-top: 30px;
+}
+
+/*BODY CSS*/
+.banner-right video{
+    width: 500px;
+    height: 400px;
+    padding-right: 25px;
+}
+.banner-top{
+    height: 700px;
+    padding-top: 250px;
+}
+
+.banner-left{
+    font-family: 'Spartan', sans-serif;
+}
+
+.banner-left h2{
+    color: var(--main-theme);
+}
+
+.banner-left p{
+    font-size: x-large;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.link-CV{
+    padding-top: 15px;
+    text-align: center;
+}
+#text-animate{
+    font-weight: bold;
+}
+.link-CV a{
+    border-radius: 10px;
+    padding: 5px;
+    background-color: var(--main-theme);
+    font-weight: bold;
+    font-size: xx-large;
+    color:black;
+    transition: 0.6s;
+}
+
+.link-CV a:hover{
+    color: var(--main-theme);
+    background-color: black;
+    text-decoration: none;
+}
+
+
+
+
+
+/* ==================== COMPETENCES CSS ==================== */
+/*.banner-project img{
+    height: 50vh;
+    width: 100%;
+    object-fit: none;
+    padding-top: 180px;
+}*/
+
+.competence-logo img{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    height: 50vh;
+}
+.competence-header .container, .about-header .container{
+    font-family: 'Spartan', sans-serif;
+    text-align: center;
+    margin-top: 35px;
+}
+
+.competence-header{
+    padding-top: 180px;
+}
+
+.competence-text p{
+    font-style: italic;
+    color: white;
+}
+.text-top-competence{
+    padding-top: 5px;
+ }
+
+.background-linear{
+    background: linear-gradient(to left,#0000FF,var(--main-theme),#0000FF);
+    border-radius: 10px;
+}
+
+.background-linear-bottom{
+    background: linear-gradient(to left,#0000FF,var(--main-theme),#0000FF);
+    border-radius: 10px;
+}
+
+.banner-project{
+    height: 250px;
+    background-image: url("../img/logo/skills.jpg");
+}
+
+.competence-text h4{
+    color: black;
+}
+.other-comp img{
+    height: 10vh;
+    padding-bottom: 10px;
+}
+.banner-project h1{
+    padding-top: 100px;
+    color: var(--main-theme);
+    font-weight: bolder;
+}
+
+.other-comp{
+    display: block ruby;
+    text-align: center;
+}
+.fa-spinner{
+    padding-left: 15px;
+    color: var(--main-theme);
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+/* ==================== CONTACT CSS ==================== */
+.contact-header .container{
+    font-family: 'Spartan', sans-serif;
+    padding-top: 70px;
+    text-align: center;
+}
+
+.button .btn{
+    background-color: var(--main-theme);
+    border: 2px solid white;
+    border-radius: 2px;
+}
+.button{
+    padding-top: 15px;
+    text-align: center;
+}
+
+.btn:hover{
+    border: 2px solid var(--main-theme);
+    background-color: white;
+}
+
+
+.contact{
+    padding-top: 160px;
+    padding-bottom: 50px;
+}
+
+.name-lastname{
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.email-phone, .message{
+    padding-top: 15px;
+    text-align: center;
+}
+
+.map{
+    padding-top: 20px;
+    width: 100%;
+}
+
+
+
+
+/* ==================== WHOAMI CSS ==================== */
+
+
+.banner-band img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    width: auto;
+}
+
+.banner-band, .project{
+    padding-top:25px;
+}
+
+
+/* ==================== PROJET PORTFOLIO CSS ==================== */
+
+section .section-project{
+    background-color: #F5F5F5;
+}
+.link-portfolio a{
+    padding: 5px;
+    border-radius: 10px;
+    color: var(--main-theme);
+    font-size: 25px;
+    text-align: center;
+    transition: 0.3s;
+    width: auto;
+}
+
+.jumbotron{
+    height: 550px;
+}
+.link-portfolio{
+    padding-top: 5px;
+    text-align: center;
+}
+
+
+.link-portfolio:hover{
+    opacity: 1;
+}
+
+
+.link-portfolio a:hover{
+    text-decoration: none;
+    color: black;
+    background: #ffa500;
+}
+
+.link-portfolio a +a{
+    border-left: 1px solid #8ec4dd;
+}
+.section-project{
+    font-family: 'Spartan', sans-serif;
+    padding-top: 230px;
+    padding-bottom: 25px;
+}
+
+.portfolio-header h4{
+    text-align: center;
+}
+
+.portfolio-header .container h1{
+    text-align: center;
+}
+
+.portfolio-header .container h4{
+    color: #A9A9A9;
+    padding: 15px;
+}
+
+.line-portfolio{
+    width: 10%;
+    border-bottom: 5px solid var(--main-theme);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.img-work img{
+    border: 2px solid white;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50vh;
+}
+
+.text-work h4{
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.creation{
+    font-size: x-large;
+    margin: 0;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.line-work{
+    width: 22%;
+    border-bottom: 5px solid var(--main-theme);
+}
+
+.text-work span{
+    font-style: italic;
+    font-weight: bold;
+}
+.img-work img:hover{
+    filter: grayscale(80%);
+}
+
+.img-work p{
+    display: none;
+}
+.img-work p:hover{
+    display: block;
+    text-align: center;
+    background-color: var(--main-theme);
+}
+.figma img{
+    height:2%;
+    width: 2%;
+}
+
+.ovh img, .html-css img{
+    width: 4%;
+    height: 4%;
+}
+
+.figma p a, .ovh p a:hover{
+    text-decoration: none;
+}
+
+.symfony img{
+    width: 5%;
+    height: 5%;
+}
+.validation{
+    padding-top: 25px;
+}
+.fa-check-circle{
+    color: var(--main-theme);
+}
+.text-validation{
+    display: block ruby;
+}
+
+
+
+/* ==================== ABOUT CSS ==================== */
+.about{
+    padding-top: 210px;
+}
+.about .jumbotron{
+    height: 600px;
+}
+
+.about .fa, .about .fas, .fa-play{
+    color: var(--main-theme);
+}
+
+.fa-quote-left, .fa-quote-right{
+    color: var(--main-theme);
+}
+
+.jumbotron i{
+    font-size: 32px;
+    padding: 0 15px;
+}
+
+.myimage-right, .about-description, .bonus{
+    padding-top: 25px;
+}
+.bonus h4{
+    text-align: center;
+    font-family: 'Spartan', sans-serif;
+}
+
+.bonus h6{
+    padding-bottom: 10px;
+}
+
+.line-long{
+    border: 1px solid #A9A9A9;
+    width: 80%;
+    margin: auto;
+}
+
+.link-article:hover{
+    text-decoration: none;
+}
+i.fa, .search p {
+    -webkit-animation: show 5s 1;
+    /* any other properties to override from FontAwesome's default .fa rule */
+}
+@-webkit-keyframes show {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+.jazz{
+    font-style: italic;
+    font-weight: bold;
+}
+.bonus h5{
+    padding-top: 15px;
+    font-weight: bold;
+}
+
+.about h6{
+    font-size: 19px;
+}
+
+
+/* ==================== FOOTER CSS ==================== */
+footer .container .footer-up{
+    margin-top: -110px;
+    padding-bottom: 8rem;
+}
+
+#footer {
+    background-color: black;
+}
+
+footer .container .footer-bottom{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.footer-up .row .col-lg .container span a{
+    font-family: 'Spartan', sans-serif;
+    text-decoration: none;
+    font-size: 50px;
+    display: block;
+    color: #fff;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.footer-bottom{
+    color: white;
+}
+.footer-copyright-left a:hover{
+    text-decoration: none;
+}
+
+.footer{
+    padding-top: 30px;
+}
+
+.tocontactme .number .fas, .tocontactme .address .fas, .fa-linkedin{
+    font-size: 30px;
+    color: var(--main-theme);
+}
+
+.tocontactme .address{
+    padding-top: 15px;
+}
+
+.footer-stay-connected-right a{
+    font-size: 30px;
+}
+
+.footer{
+    font-family: 'Spartan', sans-serif;
+}
+
+.footer-stay-connected-right{
+    display: ruby;
+}
