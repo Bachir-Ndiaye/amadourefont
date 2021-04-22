@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PORTFOLIO - Amadou B. NDIAYE{% endblock %}
+
+{% block body %}
+
+    <section class="section-project" id="project">
+        <header class="portfolio-header">
+            <div class="container-fluid">
+                <h1>MON PORTFOLIO</h1>
+                <div class="line-portfolio"></div>
+            </div>
+        </header>
+
+        <div class="project">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md">
+                        <h4>Project en cours de développement</h4>
+                        <div class="img-work">
+                            <a href="https://www.lacitemusicale.fr/"><img src="{{ asset('img/logo/logo_black.png') }}" alt="Logo la cité musicale"></a>
+                        </div>
+                        <div class="text-work">
+                            <h3>LA CITE MUSICALE</h3>
+                            <div class="line-work"></div>
+                            <p class="creation">Création et développement web COMPLET</p>
+                            <p class="creation">Site web <span><a href="https://www.lacitemusicale.fr/">www.lacitemusicale.fr </a></span>   pour l'association qui porte le même nom et qui évolue dans le milieu musical.
+                                <br> Basée sur Carcassonne. </p>
+                            <div class="line-work"></div>
+                            <div class="validation">
+                                <div class="text-validation figma">
+                                    <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                    <p>Maquette de design avec l'outil <a href="https://www.figma.com/">FIGMA</a></p>
+                                    <img src="https://www.amadou-ndiaye.fr/img/logo/figma.svg" alt="logo figma">
+                                </div>
+                                <div class="text-validation html-css">
+                                    <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                    <p>Intégration avec HMTL/TWIG et CSS</p>
+                                    <img src="https://www.amadou-ndiaye.fr/img/logo/html-css.png" alt="logo html css">
+                                </div>
+                                <div class="text-validation">
+                                    <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                    <p>Référencement naturel SEO - <span>Google Search Console</span> </p>
+                                </div>
+                                <div class="text-validation ovh">
+                                    <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                    <p>Hébergement et nom de domaine chez <a href="https://www.ovh.com/fr/">OVH</a></p>
+                                    <img src="https://www.amadou-ndiaye.fr/img/logo/ovh.png" alt="logo ovh">
+                                </div>
+                                <div class="text-validation symfony">
+                                    <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                    <p>Framework de développement - <span>SYMFONY</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BLOG - Amadou B. NDIAYE{% endblock %}
+
+{% block body %}
+
+ <section class="blog">
+     <header class="blog-header">
+         <div class="container">
+             <h1>MON BLOG</h1>
+             <div class="line-portfolio"></div>
+         </div>
+     </header>
+     {% for article in articles %}
+     <div class="blog-article">
+         <div class="container card" style="width: 18rem;">
+             <img class="card-img-top" src="https://www.amadou-ndiaye.fr/img/logo/conf.png" alt="Configuration fichier .env">
+             <div class="card-body">
+                 <p class="card-text">Comment bien configurer son fichier .env</p>
+                 <div class="container configuration-env">
+                     <a href="{{ path('blog_article', {id: article.id, slug: article.slug}) }}" class="btn article">Lien vers article</a>
+                 </div>
+             </div>
+
+         </div>
+     </div>
+     {% endfor %}
+ </section>
+{% endblock %}

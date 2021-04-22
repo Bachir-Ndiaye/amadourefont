@@ -1,0 +1,207 @@
+<!--
+	Vous êtes enfin arrivés dans mon monde. Bonne lecture de code.
+	- Code 100% à la main, pas de CMS !
+	- Première version : A uploader dans les semaines à venir.
+	- N'hésitez pas à m'écrire : amadou.n-diaye@hotmail.com
+-->
+{% set route_name = app.request.attributes.get('_route') %}
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<!-- META required / for some SEO purpose -->
+		<meta charset="UTF-8">
+		<meta name="robots" content="index, follow">
+		<meta name="google-site-verification" content="P_6XzdIuvio_OgeYoXpICkeZmVWkNDFz0mMHoYLBC_U"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="Keywords" content="Développeur web, Toulouse, Amadou NDIAYE, sénégalais">
+		<meta name="Description" content="Amadou B. NDIAYE : Développeur web junior">
+		<meta
+		name="author" content="Amadou B. NDIAYE">
+
+		<!-- OG Conditions for Facebook API -->
+		{% if route_name == "home" %}
+			<meta property="og:locale" content="fr_FR"/>
+			<meta property="og:image" content="{{ asset('img/logo/home.png') }}"/>
+			<meta property="og:image:width" content="100%"/>
+			<meta property="og:image:height" content="100%"/>
+			<meta property="og:type" content="website"/>
+			<meta property="og:url" content="https://www.amadou-ndiaye.fr/"/>
+			<meta property="og:title" content="Amadou B. NDIAYE - Développeur web"/>
+			<meta property="og:description" content="WebDesign, Intégration, Responsive, SEO et maintenance"/>
+		{% elseif route_name == "portfolio" %}
+			<meta property="og:locale" content="fr_FR"/>
+			<meta property="og:image" content="{{ asset('img/logo/portfolio.png') }}"/>
+			<meta property="og:image:width" content="100%"/>
+			<meta property="og:image:height" content="100%"/>
+			<meta property="og:type" content="website"/>
+			<meta property="og:url" content="https://www.amadou-ndiaye.fr/#portfolio"/>
+			<meta property="og:title" content="PORTFOLIO - Développeur Web : Amadou B. NDIAYE"/>
+			<meta property="og:description" content="Mes réalisations et mes projets en cours de développement"/>
+		{% elseif route_name == "about" %}
+			<meta property="og:locale" content="fr_FR"/>
+			<meta property="og:image" content="{{ asset('img/logo/about.png') }}"/>
+			<meta property="og:image:width" content="100%"/>
+			<meta property="og:image:height" content="100%"/>
+			<meta property="og:type" content="website"/>
+			<meta property="og:url" content="https://www.amadou-ndiaye.fr/#about"/>
+			<meta property="og:title" content="À PROPOS - Développeur Web : Amadou B. NDIAYE"/>
+			<meta property="og:description" content="Envie d'en savoir plus sur : mon parcours scolaire, mes hobbies et mes motivations ?"/>
+		{% elseif route_name == "competence" %}
+			<meta property="og:locale" content="fr_FR"/>
+			<meta property="og:image" content="{{ asset('img/logo/competence.png') }}"/>
+			<meta property="og:image:width" content="100%"/>
+			<meta property="og:image:height" content="100%"/>
+			<meta property="og:type" content="website"/>
+			<meta property="og:url" content="https://www.amadou-ndiaye.fr/#competence"/>
+			<meta property="og:title" content="COMPÉTENCES - Développeur Web : Amadou B. NDIAYE"/>
+			<meta property="og:description" content="..."/>
+		{% elseif route_name == "contact" %}
+			<meta property="og:locale" content="fr_FR"/>
+			<meta property="og:image" content="{{ asset('img/logo/contact.png') }}"/>
+			<meta property="og:image:width" content="100%"/>
+			<meta property="og:image:height" content="100%"/>
+			<meta property="og:type" content="website"/>
+			<meta property="og:url" content="https://www.amadou-ndiaye.fr/#contact"/>
+			<meta property="og:title" content="CONTACT - Développeur Web : Amadou B. NDIAYE"/>
+			<meta property="og:description" content="vous voulez un devis pour votre projet ? Contactez-moi en remplissant ce formulaire."/>
+		{% elseif route_name == "blog" %}
+			<meta property="og:locale" content="fr_FR"/>
+			<meta property="og:image" content="{{ asset('img/logo/blog.png') }}"/>
+			<meta property="og:image:width" content="100%"/>
+			<meta property="og:image:height" content="100%"/>
+			<meta property="og:type" content="website"/>
+			<meta property="og:url" content="https://www.amadou-ndiaye.fr/blog"/>
+			<meta property="og:title" content="BLOG - Développeur Web : Amadou B. NDIAYE"/>
+			<meta property="og:description" content="Articles sur : Frameworks, Tehnologies, Configurations, Expériences de développeur, Linux."/>
+		{% elseif route_name == "blog_article" %}
+			<meta property="og:locale" content="fr_FR"/>
+			<meta property="og:image" content="{{ asset('img/logo/fichierenv.png') }}"/>
+			<meta property="og:image:width" content="100%"/>
+			<meta property="og:image:height" content="100%"/>
+			<meta property="og:type" content="articles"/>
+			<meta property="og:url" content="https://www.amadou-ndiaye.fr/blog/configuration-du-fichier-env-7"/>
+			<meta property="og:title" content="Configuration du fichier .ENV sur SYMFONY - Amadou B. NDIAYE"/>
+			<meta property="og:description" content="Apprendre à bien paramétrer ses variables d'environnements dans Symfony"/>
+		{% endif %}
+
+		<link rel="canonical" href="https://www.amadou-ndiaye.fr/"/>
+
+		<title>
+			{% block title %}Développeur Web - Amadou B. NDIAYE
+			{% endblock %}
+		</title>
+
+		<!-- main css and favivon for all devices -->
+		<link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="./favicon/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+		<link rel="manifest" href="{{ asset('favicon/manifest.json') }}">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		<link href="{{ asset('css/home.css') }}" rel="stylesheet">
+		<link href="{{ asset('css/refont.css') }}" rel="stylesheet">
+
+		<!-- CSS Links -->
+		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Spartan&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" rel="stylesheet">
+
+	</head>
+	<body>
+
+
+
+		<!-- NAVBAR SECTION -->
+		<nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon-me">
+					<div class="cercle-logo">
+						<h2>
+							<span>A</span>N</h2>
+					</div>
+				</span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<li {% if route_name == "user_index" %} class="nav-link active" {% else %} class="nav-link" {% endif %}>
+					<a class="nav-link" href="{{ path('home') }}">accueil</a>
+				</li>
+				<li {% if route_name == "user_index" %} class="nav-link active" {% else %} class="nav-link" {% endif %}>
+					<a class="nav-link" href="#portfolio">portfolio</a>
+				</li>
+				<li {% if route_name == "user_index" %} class="nav-link active" {% else %} class="nav-link" {% endif %}>
+					<a class="nav-link" href="#about">à propos</a>
+				</li>
+				<div class="cercle-logo cercle-mobile-first">
+					<a href="{{ path('home') }}">
+						<h2>
+							<span>A</span>N</h2>
+					</a>
+				</div>
+				<li {% if route_name == "user_index" %} class="nav-link active" {% else %} class="nav-link" {% endif %}>
+					<a class="nav-link" href="#competence">compétences</a>
+				</li>
+				<li {% if route_name == "user_index" %} class="nav-link active" {% else %} class="nav-link" {% endif %}>
+					<a class="nav-link" href="#contact">contact</a>
+				</li>
+				<li {% if route_name == "user_index" %} class="nav-link active" {% elseif route_name == "blog_article" %} class="nav-link active" {% else %} class="nav-link" {% endif %}>
+					<a class="nav-link" href="{{ path('blog') }}">blog</a>
+				</li>
+			</div>
+		</nav>
+		{% block body %}{% endblock %}
+		{% block javascripts %}{% endblock %}
+
+		<!-- Script links -->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/typeit/6.5.1/typeit.min.js"></script>
+		<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+		<!-- Script links END -->
+
+		<!-- preloader js -->
+		<script type="text/javascript" src="../amadou-js/globaljs.js"></script>
+
+	</body>
+
+	<!-- FOOTER SECTION -->
+	<footer>
+		<div class="footer-top"></div>
+		<div class="footer-middle"></div>
+		<div class="footer-bottom">
+			<div class="footer-left">
+				<p class="footer-links">
+					<a class="#" href="#">Acceuil</a>
+					<a href="#">A propos</a>
+					<a href="#">Compétences</a>
+					<a href="#">Portfolio</a>
+					<a href="#">Contact</a>
+				</p>
+			</div>
+			<div class="footer-right">
+				<a href="#"><i class="fab fa-facebook"></i></a>
+				<a href="#"><i class="fab fa-twitter"></i></a>
+				<a href="#"><i class="fab fa-github"></i></a>
+			</div>
+			<p id="copyright">Amadou B. NDIAYE &copy; 2021</p>
+		</div>
+	</footer>
+
+</html>

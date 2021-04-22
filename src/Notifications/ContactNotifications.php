@@ -26,8 +26,8 @@ class ContactNotifications
     public function notify(Visitor $visitor)
     {
         $visitorEmail = $visitor->getEmail();
-        $message = (new \Swift_Message('Message bien envoyé '. $visitor->getName()))
-            ->setFrom('bachir.ndiaye.pro@gmail.com')
+        $message = (new \Swift_Message('Accusé de réception Mr/Mme :  '.$visitor->getLastname().' '. $visitor->getName()))
+            ->setFrom('no-reply@amadou-ndiaye.fr')
             ->setTo($visitorEmail)
             ->setReplyTo($visitorEmail)
             ->setBody($this->renderer->render('emails/contact.html.twig',[

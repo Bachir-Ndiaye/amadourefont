@@ -1,131 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+/*
+Author : Amadou NDIAYE;
+URI : https://www.amadou-ndiaye.fr/
+Theme name : ;
+Description : Personnal blog ;
+Tags : Développeur web junior - PHP;
+*/
 /*Définition du theme generale de la page web*/
 :root{
-    --main-theme: #60b0f4;
+    --main-theme: #11043a;
+    --dark-blue: #00306c;
+    --lighter-blue : #d8e8ed;
+    --yellow : #f9f871;
+    --violet: #621550;
+    --wheat : wheat;
+
+
+
+}
+/*toogle button*/
+.navbar-light .navbar-toggler{
+    border-color: transparent !important;
 }
 body, html{
     padding: 0;
     margin: 0;
-    font-family: 'Spartan', sans-serif;
+    /*font-family: 'Spartan', sans-serif;*/
+    font-family: 'Poppins', sans-serif;
 }
 
 /*FLASH NOTICE*/
 .flash-notice{
     margin-top: 20px;
-    color:white;padding-top: 4px;
+    margin-bottom: 15px;
+    color:wheat;
+    padding-top: 4px;
     text-align: center;
     border-radius: 10px;
-    background-color: #5271ff;
+    border: 2px solid white;
+    background-color: var(--main-theme);
 }
 /*PRELOADER*/
 .preloader{
     position: fixed;
-    z-index: 99;
-    padding-top: 250px;
+    z-index: 999999;
     width: 100%;
     height: 100%;
-    display: inline-flex;
+    padding-top: 40vh;
+    padding-left: 47%;
+    background-color: var(--main-theme);
+}
+.spinner-logo img{
+    margin: 0 auto;
+    width: auto;
+    height: 250px;
+}
+
+.spinner-logo{
+    padding-top: 30vh;
     justify-content: center;
     justify-items: center;
-    background-color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
 }
 
-.img-top{
-    width: 350px;
-    position: absolute;
-    object-fit: contain;
-}
-
-.img-bottom{
-    padding-top: 6px;
-    width: 850px;
-    padding-right: 30px;
-    position: absolute;
-    object-fit: contain;
-}
-
-.preloader.hidden {
-    animation: fadeout 0s;
+.preloader.hidden{
+    animation: fadeout 0.5s;
     animation-fill-mode: forwards;
 }
 
-@keyframes fadeout {
+@keyframes fadeout{
     100%{
         opacity: 1;
         visibility: hidden;
     }
-    
 }
 /*NAVBAR CSS*/
-.play-button{
-    padding-bottom: 5px;
-    text-align: center;
-}
-.search{
-    display: block ruby;
-    width: 100%;
-    position: relative;
-    animation: mymove 5s infinite;
-}
-@keyframes mymove {
-    0%   {left: 0px;}
-    25%  {left: 50px;}
-    50%  {left: 25px;}
-    75%  {left: 50px}
-    100% {left: 0px;}
-}
-.search p{
-    color: #60b0f4;
-    font-size: 25px;
-}
-.exclamation-left, .exclamation-right{
-    font-size: x-large;
-    color:darkred;
-    padding: 0px 10px;
-}
 .linkedin-top i{
-    padding-top: 13px;
-    padding-left: 5px;
+    line-height: 0.8;
     font-size: 45px;
 }
-@keyframes example {
-    from {background-color: red;}
-    to {background-color: yellow;}
+.linkedin-top{
+    padding-top: 1rem;
 }
 
 .linkedin-top i:hover{
-    color:blue;
-}
-.navbar-section{
-    width: 100%;
-    z-index:1;
-    background-color: white;
-    position: fixed;
-    font-family: 'Spartan', sans-serif;
-    box-shadow: 0 8px 6px -6px black;
+    color: var(--main-theme);
 }
 
-.navbar-section .navbar .container-left-logo{
-    display: inline-flex;
-    justify-content: start;
+.navbar{
+    position: fixed !important;
+    width: 100%;
+    z-index: 999;
+    background-color: var(--main-theme);
+
+}
+.body-top-cv, .project-released, .blog{
+    padding-top: 115px;
+}
+.container-left-logo{
+    text-align: center;
 }
 .navbar-left a{
      text-transform: uppercase;
  }
-.container-left-logo h4{
-    margin-left: 15px;
-    margin-top: 10px;
+.collapse{
+    justify-content: center;
+}
+.container-left-logo h1{
+    font-family: 'Nothing You Could Do', cursive;
+    color: wheat;
+    font-size: xx-large;
+}
+#dev{
+    animation-name: moveToLeft;
+    animation-duration: 4s;
+}
+@keyframes moveToLeft {
+    0%{
+        transform: translateX(-150px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+#amadou{
+    font-size: 100px;
 }
 
-#element-navbar:hover{
-    border-top: 4px solid #60b0f4;
-    color: black;
+.container-left-logo a:hover{
+    text-decoration: none;
 }
 
 .container .competence{
     display: ruby;
+    white-space: nowrap;
 }
+
 .ndiaye{
     color: var(--main-theme);
+}
+@keyframes moveToTop {
+    0%{
+        transform: translateY(-70px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+
 }
 .banner-project .row{
     display: block;
@@ -133,74 +160,119 @@ body, html{
 
 .banner-project h1, .banner-project .row .col h2{
     text-align: center;
+    font-family: 'Spartan', sans-serif;
 }
-#element-navbar{
-    color: var(--main-theme);
-    font-size: 18px;
+.nav-link{
+    font-family: 'Spartan', sans-serif;
+    color: wheat;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.nav-link:hover{
+    transition: 0.5s;
+    color: #4165bd;
 }
 
-.navbar .container h1{
+li.nav-link.active a{
+    color :#4165bd;
+}
+.text-preloader{
+    color: wheat;
+}
+
+.row{
+    margin:0 !important;
+}
+.navbar .container-left-logo{
+    padding-left: 120px;
+}
+.navbar .container-left-logo h1{
     padding-top: 30px;
 }
 
 /*BODY CSS*/
-.banner-right video{
-    width: 500px;
-    height: 400px;
-    padding-right: 25px;
-}
-.banner-top{
-    height: 700px;
-    padding-top: 250px;
+video{
+    margin-top: 1rem;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    border: 4px solid wheat;
+    border-radius: 15px;
 }
 
-.banner-left{
+.text-work{
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    width: 70%;
+    color: wheat;
+    margin: 0 auto;
+}
+.jumbotron-banner-top{
+    width: 60%;
+    padding-top: 4rem;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+
+}
+.jumbotron-banner-top h2{
+    font-size: 3em;
+}
+.jumbotron-banner-top h1 {
     font-family: 'Spartan', sans-serif;
+    color: wheat;
+}
+.cv-video-text h1{
+    padding: 0px 1rem;
+}
+.cv-video-text{
+    display:inline-flex;
+}
+.cv-video-text .fas{
+    font-size: 40px;
+    color:red;
+    animation-name: moveToTop;
+    animation-duration: 5s;
 }
 
-.banner-left h2{
-    color: var(--main-theme);
+.banner-top {
+    background-color: white;
+    padding-bottom: 50px;
 }
 
-.banner-left p{
-    font-size: x-large;
-    font-family: 'Open Sans Condensed', sans-serif;
+.l-bottom{
+    color: wheat !important;
 }
 
 .link-CV{
     padding-top: 15px;
     text-align: center;
 }
+.link-CV a{
+    font-size:40px;
+}
 #text-animate{
+    font-size: 2.5em;
     font-weight: bold;
 }
 .link-CV a{
     border-radius: 10px;
     padding: 5px;
-    background-color: var(--main-theme);
+    background-color: black ;
     font-weight: bold;
-    font-size: xx-large;
-    color:black;
+    color:white;
     transition: 0.6s;
 }
 
 .link-CV a:hover{
-    color: var(--main-theme);
+    color: wheat;
     background-color: black;
     text-decoration: none;
 }
 
-
-
-
-
 /* ==================== COMPETENCES CSS ==================== */
-/*.banner-project img{
-    height: 50vh;
-    width: 100%;
-    object-fit: none;
-    padding-top: 180px;
-}*/
 
 .competence-logo img{
     display: block;
@@ -208,55 +280,51 @@ body, html{
     margin-left: auto;
     height: 50vh;
 }
-.competence-header .container, .about-header .container{
+.competence-header .container, .about-header .container, .blog-header .container{
     font-family: 'Spartan', sans-serif;
     text-align: center;
-    margin-top: 35px;
-}
-
-.competence-header{
-    padding-top: 180px;
 }
 
 .competence-text p{
     font-style: italic;
-    color: white;
+    color: #4165bd;
 }
 .text-top-competence{
     padding-top: 5px;
  }
 
 .background-linear{
-    background: linear-gradient(to left,#0000FF,var(--main-theme),#0000FF);
     border-radius: 10px;
+}
+.competence-top{
+    padding-bottom: 100px;
+    padding-top: 100px;
+    background-image: url("../img/logo/competence.jpg");
+    background-size: cover;
 }
 
 .background-linear-bottom{
-    background: linear-gradient(to left,#0000FF,var(--main-theme),#0000FF);
     border-radius: 10px;
 }
 
 .banner-project{
-    height: 250px;
-    background-image: url("../img/logo/skills.jpg");
+    padding: 50px 50px;
+    background-color: black;
 }
-
 .competence-text h4{
-    color: black;
-}
-.other-comp img{
-    height: 10vh;
-    padding-bottom: 10px;
-}
-.banner-project h1{
-    padding-top: 100px;
-    color: var(--main-theme);
-    font-weight: bolder;
+    color: wheat;
 }
 
 .other-comp{
+    padding-top: 100px;
+    padding-bottom: 50px;
     display: block ruby;
+    white-space: nowrap;
     text-align: center;
+}
+.other-comp h3{
+    color: #e014eb;
+    font-weight: bold;
 }
 .fa-spinner{
     padding-left: 15px;
@@ -264,133 +332,57 @@ body, html{
     font-weight: bold;
     font-size: xx-large;
 }
-
-/* ==================== CONTACT CSS ==================== */
-.contact-header .container{
-    font-family: 'Spartan', sans-serif;
-    padding-top: 70px;
-    text-align: center;
+.linkedin-top .fa-linkedin, .linkedin-top .fa-github{
+    transition: 0.5s ease-in-out;
+    color: var(--main-theme);
 }
-
-.button .btn{
-    background-color: var(--main-theme);
-    border: 2px solid white;
-    border-radius: 2px;
+.linkedin-top .fa-linkedin:hover{
+    color: wheat;
 }
-.button{
-    padding-top: 15px;
-    text-align: center;
+.linkedin-top .fa-github:hover{
+    color: wheat;
 }
-
-.btn:hover{
-    border: 2px solid var(--main-theme);
-    background-color: white;
+.linkedin-top i{
+    margin: 0px 1rem;
 }
-
-
-.contact{
-    padding-top: 160px;
-    padding-bottom: 50px;
-}
-
-.name-lastname{
-    align-items: center;
-    align-content: center;
-    text-align: center;
-    padding-top: 10px;
-}
-
-.email-phone, .message{
-    padding-top: 15px;
-    text-align: center;
-}
-
-.map{
-    padding-top: 20px;
-    width: 100%;
-}
-
-
-
-
-/* ==================== WHOAMI CSS ==================== */
-
-
-.banner-band img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 300px;
-    width: auto;
-}
-
-.banner-band, .project{
-    padding-top:25px;
-}
-
 
 /* ==================== PROJET PORTFOLIO CSS ==================== */
 
-section .section-project{
-    background-color: #F5F5F5;
-}
-.link-portfolio a{
-    padding: 5px;
-    border-radius: 10px;
-    color: var(--main-theme);
-    font-size: 25px;
-    text-align: center;
-    transition: 0.3s;
-    width: auto;
-}
-
-.jumbotron{
-    height: 550px;
-}
-.link-portfolio{
-    padding-top: 5px;
+.jumbotron-banner-top h2{
     text-align: center;
 }
 
-
-.link-portfolio:hover{
-    opacity: 1;
-}
-
-
-.link-portfolio a:hover{
-    text-decoration: none;
-    color: black;
-    background: #ffa500;
-}
-
-.link-portfolio a +a{
-    border-left: 1px solid #8ec4dd;
-}
 .section-project{
     font-family: 'Spartan', sans-serif;
-    padding-top: 230px;
-    padding-bottom: 25px;
+    padding: 1rem 0rem;
+   /* background-image: url("../img/logo/portfolio.jpg");*/
+    background-size: cover;
 }
 
-.portfolio-header h4{
+.project h4, .portfolio-header h1{
     text-align: center;
 }
-
-.portfolio-header .container h1{
-    text-align: center;
+.project h4{
+    color: wheat;
+    padding-bottom: 15px;
+}
+.portfolio-header h1{
+    color: black;
 }
 
-.portfolio-header .container h4{
+.portfolio-header .container-fluid h4{
     color: #A9A9A9;
     padding: 15px;
 }
 
 .line-portfolio{
     width: 10%;
-    border-bottom: 5px solid var(--main-theme);
+    border-bottom: 5px solid var(--dark-blue);
     margin-right: auto;
     margin-left: auto;
+}
+.portfolio-header{
+    padding-bottom: 4rem;
 }
 
 
@@ -400,7 +392,8 @@ section .section-project{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    height: 50vh;
+    height: 300px;
+    width: 300px;
 }
 
 .text-work h4{
@@ -416,7 +409,7 @@ section .section-project{
 
 .line-work{
     width: 22%;
-    border-bottom: 5px solid var(--main-theme);
+    border-bottom: 5px solid #4165bd;
 }
 
 .text-work span{
@@ -424,6 +417,7 @@ section .section-project{
     font-weight: bold;
 }
 .img-work img:hover{
+    transition: 0.5s;
     filter: grayscale(80%);
 }
 
@@ -436,136 +430,70 @@ section .section-project{
     background-color: var(--main-theme);
 }
 .figma img{
-    height:2%;
-    width: 2%;
+    height:5vh;
+    width: 5vh;
 }
 
 .ovh img, .html-css img{
-    width: 4%;
-    height: 4%;
+    width: auto;
+    height: 5vh;
 }
 
 .figma p a, .ovh p a:hover{
     text-decoration: none;
 }
 
-.symfony img{
-    width: 5%;
-    height: 5%;
-}
 .validation{
     padding-top: 25px;
 }
 .fa-check-circle{
-    color: var(--main-theme);
+    color: #4165bd;
 }
 .text-validation{
-    display: block ruby;
+    display: flex;
 }
-
-
-
-/* ==================== ABOUT CSS ==================== */
-.about{
-    padding-top: 210px;
+.text-validation img{
+    padding-left: 8px;
 }
-.about .jumbotron{
-    height: 600px;
+.fa-check-circle{
+    padding-right: 10px;
 }
-
-.about .fa, .about .fas, .fa-play{
-    color: var(--main-theme);
-}
-
-.fa-quote-left, .fa-quote-right{
-    color: var(--main-theme);
-}
-
-.jumbotron i{
-    font-size: 32px;
-    padding: 0 15px;
-}
-
-.myimage-right, .about-description, .bonus{
-    padding-top: 25px;
-}
-.bonus h4{
-    text-align: center;
-    font-family: 'Spartan', sans-serif;
-}
-
-.bonus h6{
-    padding-bottom: 10px;
-}
-
-.line-long{
-    border: 1px solid #A9A9A9;
-    width: 80%;
-    margin: auto;
-}
-
-.link-article:hover{
-    text-decoration: none;
-}
-i.fa, .search p {
-    -webkit-animation: show 5s 1;
-    /* any other properties to override from FontAwesome's default .fa rule */
-}
-@-webkit-keyframes show {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-.jazz{
-    font-style: italic;
-    font-weight: bold;
-}
-.bonus h5{
-    padding-top: 15px;
-    font-weight: bold;
-}
-
-.about h6{
-    font-size: 19px;
-}
-
 
 /* ==================== FOOTER CSS ==================== */
-footer .container .footer-up{
-    margin-top: -110px;
-    padding-bottom: 8rem;
+.footer-up{
+    padding-top: 5rem;
 }
 
 #footer {
-    background-color: black;
+    background-color: #11043A;
 }
 
-footer .container .footer-bottom{
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+.sf-toolbar-clearer{
+    height: 0px !important;
 }
-
-.footer-up .row .col-lg .container span a{
-    font-family: 'Spartan', sans-serif;
+#bachir{
+    color: wheat;
+}
+#bachir:hover{
+    text-decoration: none;
+}
+.footer-up .row .col-lg .container-fluid span a{
     text-decoration: none;
     font-size: 50px;
     display: block;
-    color: #fff;
+    color: wheat;
     font-weight: 400;
     margin-top: 20px;
 }
 
 .footer-bottom{
-    color: white;
+    text-align: center;
 }
 .footer-copyright-left a:hover{
     text-decoration: none;
 }
 
-.footer{
-    padding-top: 30px;
-}
-
-.tocontactme .number .fas, .tocontactme .address .fas, .fa-linkedin{
+.tocontactme .number .fas, .tocontactme .address .fas{
     font-size: 30px;
     color: var(--main-theme);
 }
@@ -573,15 +501,368 @@ footer .container .footer-bottom{
 .tocontactme .address{
     padding-top: 15px;
 }
-
-.footer-stay-connected-right a{
-    font-size: 30px;
+.text-center .container-fluid{
+    padding-top: 5rem;
+}
+.footer-copyright-left{
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    background-color: #16267e;
+}
+.container-fluid, .container-lg, .container-md, .container-sm, .container-xl{
+    padding: 0px !important;
+}
+.tocontactme{
+    padding-top: 7rem;
+    padding-bottom: 7rem;
 }
 
 .footer{
     font-family: 'Spartan', sans-serif;
 }
 
-.footer-stay-connected-right{
-    display: ruby;
+.cercle-logo{
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: wheat;
+    -webkit-margin-before: 0px;
 }
+
+
+.cercle-logo h2{
+    font-weight: bold;
+    font-size: 44px;
+    padding-top: 26px;
+    transition: 0.5s;
+    color: var(--main-theme);
+    font-family: 'Nothing You Could Do', cursive;
+}
+.cercle-logo a:hover{
+    text-decoration: none;
+}
+.email h3{
+    color: lightblue;
+}
+
+.round-logo{
+    margin:0 auto;
+    width: 136px;
+    height: 136px;
+    text-align: center;
+    border-radius: 50%;
+    background-image: url("../img/logo/bachir.jpg");
+    background-size: cover;
+}
+
+.partage{
+    margin-bottom: 0px !important;
+    font-family: 'Spartan', sans-serif;
+    font-size: x-large;
+    text-align: center;
+}
+
+
+
+/*BLOG*/
+.blog-header{
+    padding: 50px 50px;
+    background-color: black;
+}
+.blog-article-text{
+    padding-top: 150px;
+    padding-bottom: 50px;
+    background-color: wheat;
+}
+
+.blog-article-text .container-fluid h1,.blog-article-text .container-fluid{
+    width: 80%;
+    margin: 0 auto;
+}
+.blog-article-text .container-fluid h1{
+    padding-bottom: 50px;
+}
+.blog-article{
+    background-image: url("../img/logo/blog.jpg");
+    background-size: cover;
+    display:flex;
+}
+.configuration-env{
+    text-align: center;
+}
+.configuration-env a:hover{
+    color: var(--main-theme) !important;
+    background-color: wheat !important;
+}
+.configuration-env a{
+    color: wheat !important;
+}
+.card{
+    margin-top: 5rem;
+    margin-bottom: 15rem;
+    padding: 0px !important;
+    border-radius: 0px !important;
+}
+.card-body .btn{
+    border-radius: 0px;
+}
+.article{
+    transition: 0.3s;
+    border-radius: 15px;
+    border: 2px solid var(--main-theme) !important;
+    background-color: var(--main-theme) !important;
+}
+.card-body a{
+    color: white;
+}
+
+.blog-header h1{
+    color: wheat;
+}
+.blog-article{
+    padding-bottom: 5px;
+}
+.env{
+    font-weight: bold;
+    font-style: italic;
+}
+
+.card-body h5{
+    font-weight: bold;
+    font-size: large;
+    font-family: 'Spartan', sans-serif;
+    border-bottom: 1px solid var(--main-theme);
+}
+
+.card{
+    border: none !important;
+}
+
+.blog-article{
+    padding-top: 25px;
+}
+
+.article-desc{
+    font-weight: bold;
+}
+
+.article-env p{
+    font-size: x-large;
+}
+.article-env img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.ve{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: wheat;
+    text-align: center;
+    border-left: 4px solid #4165bd;
+    padding-left: 10px;
+    background-color: var(--main-theme);
+}
+
+.smtp{
+    font-style: italic;
+}
+.note{
+    background-color: #A9A9A9;
+    font-style: italic;
+    font-size: large;
+    color: black;
+    padding: 0.3rem 0.3rem;
+}
+.bold{
+    font-weight: bold;
+}
+
+.var{
+    font-weight: bold;
+    font-style: italic;
+}
+.fa-question-circle{
+    color: var(--main-theme);
+}
+
+.fa-info-circle,.fa-hourglass-end, .fa-paper-plane{
+    color: #4165bd;
+}
+.fa-mobile, .fa-home{
+    color: #4165bd !important;
+}
+.fa-mobile, .fa-home{
+    padding-bottom: 0.7rem;
+}
+.banner-top{
+    padding-top: 150px;
+    padding-bottom: 250px;
+    background-image: url("../img/logo/bg1.jpg");
+    background-size: cover;
+}
+.cercle-logo span{
+    color: var(--main-theme);
+}
+
+.nav-link{
+    padding: 1rem 1rem;
+}
+
+@media all and (max-width: 988px){
+    .cercle-mobile-first{
+        display: none;
+    }
+    .nav-link{
+        font-size: 45px;
+        text-align: center;
+    }
+    .text-work{
+        width: 100%;
+    }
+    .show{
+        margin: 0 auto;
+        height: 1024px !important;
+    }
+}
+button:focus{
+    outline:1px dotted !important;
+}
+@media all and (max-width: 902px){
+    .preloader{
+        padding-left: 45%;
+    }
+    .footer-up .row .col-lg .container-fluid span a{
+        font-size: 35px;
+    }
+    #amadou{
+        font-size: 75px;
+    }
+    .nav-link{
+        font-size: 40px;
+    }
+    .blog-article-text .container-fluid h1,.blog-article-text .container-fluid{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .ndiaye{
+        color: #4165bd;
+    }
+    .formulaire {
+        display: flex;
+    }
+    #form_name, #form_lastname, #form_phone, #form_email, #form_message{
+        width: -moz-available;
+    }
+}
+
+@media all and (max-width: 648px){
+    .preloader{
+        padding-left: 40%;
+    }
+    .other-comp h3{
+        font-size:25px;
+    }
+    .footer-up .row .col-lg .container-fluid span a{
+        font-size: 25px;
+    }
+    .article-env p{
+        word-wrap: break-word;
+        margin: 0 auto;
+        width: 90%;
+    }
+    #amadou{
+        font-size: 50px;
+    }
+    .formulaire {
+        display: block;
+    }
+    .nav-link{
+        font-size: 35px;
+    }
+    .cv-video-text h1{
+        font-size: 1.7rem;
+    }
+    .cv-video-text .fas{
+        font-size: 30px;
+    }
+
+}
+@media all and (max-width: 522px){
+
+    .portfolio-header h1, .contact-header h1, .competence-header h1, .contact-header h1, .about-header h1, .blog-header h1{
+    font-size: x-large;
+    }
+    .blog-article-text .container-fluid h1,.blog-article-text .container-fluid{
+        width: 100%;
+        margin: 0 auto;
+    }
+
+
+}
+@media all and (max-width: 480px){
+
+    .footer-up .row .col-lg .container-fluid span a{
+        font-size: 20px;
+    }
+    .link-CV a{
+        font-size: 30px;
+    }
+    #amadou{
+        font-size: 50px;
+    }
+}
+@media all and (max-width: 400px){
+
+    .portfolio-header h1, .contact-header h1, .competence-header h1, .contact-header h1, .about-header h1, .blog-header h1{
+        font-size: large;
+    }
+    .footer-up .row .col-lg .container-fluid span a{
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    .link-CV a{
+        font-size: 25px;
+    }
+    .address h4, .number h4{
+        font-size: 1rem !important;
+    }
+    .preloader{
+        padding-left: 34%;
+    }
+
+}
+
+
+
+
+/*==================
+    FOOTER
+===================*/
+.social-container{
+    background-color:  wgite;
+    padding: 3rem 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.linkedin .fa{
+    background-color: white;
+    padding: 1.5rem 1.5rem;
+    color: rgb(40,103,178);
+    box-shadow: 0px 20px 20px -17px rgba(40, 103, 178, 0.53);
+    margin: .8rem;
+    
+    
+
+}
+.linkedin .fa :hover{
+    transform: scale(1.02);
+    box-shadow: 0px 20px 35px -17px rgba(40, 103, 178, 0.65);
+}
+
+/*===================ABOUT TO MAKE SCSS=============*/

@@ -1,0 +1,160 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Configuration du fichier .env - Amadou B. NDIAYE{% endblock %}
+
+{% block body %}
+    <section class="blog-article-text">
+        <div class="container-fluid">
+                <h1 class="card-title">{{ article.title | raw}}</h1>
+            <div class="container-fluid article-env">
+                <p class="hey">Vous venez de créer votre projet Symfony. Vous êtes curieux et vous vous dites "Tiens c'est quoi tous ces fichiers qu'il m'a créé !".
+                    Vous rencontrez un fichier nommé <span class="env">.env</span> et vous ne savez pas ce que c'est. <br> <br>C'est votre jour de chance.
+                    Dans cet article je vais vous expliquer ce qu'est un fichier <span class="env">.env</span> et comment bien le paramétrer.
+                    <br> <br>
+                    <i class='fas fa-info-circle'></i> Tout d'abord, un fichier qui commence par un point (.) est ce qu'on appelle un fichier caché. Ils ne sont
+                    pas visible par défaut dans vos dossiers.
+                    Sur Linux, vous pouvez les rendre visible avec la commande <span class="note">CTRL+H</span>.
+                    <br> <br>
+                    Vous avez sûrement dû déjà rencontrer des fichiers avec une extension <span class="note">.txt</span> pour <span class="var">TEXTE</span> ou le fameux
+                    fichier <span class="note">.pdf</span> pour <span class="var">Portable Document Format</span>. Ici l'extension <span class="env">.env</span> nous renvoie à <span class="var">ENVIRONNEMENT</span>.
+                    Cela peut paraître ambigu au début, mais croyez moi, il y a une explication à tout ça. <br> <br>
+                    Lorsque vous êtes chez vous, vous êtes dans un environnement dit "domestique". Lorsque vous êtes
+                    au boulot vous êtes dans un environnement dit "professionnel". En fonction de l'environnement dans lequel
+                    vous êtes, vous allez mettre soit une chemise, soit un T-shirt, soit un débardeur. On peut alors définir une variable qui s'appelle
+                    <span class="var">HAUT</span> pour définir le haut que vous aller porter. Cette variable n'aura pas du coup la même valeur
+                    en fonction de l'environnement dans lequel vous êtes.<br> <br>
+                    En informatique, c'est pareil, il y'a plusieurs environnements et en fonction de l'environnement dans lequel
+                    vous êtes, les variables différent. Que vous soyez, sous Mac, Linux ou Windows, il est important
+                    de bien les paramétrer pour que votre système réagisse convenablement.
+                    <br> <br> Dans la suite, on va voir en profondeur ce qu'est réellement une variable d'environnement pour le framework Symfonny.<br> <br>
+                <h3 class="ve">Qu'est-ce qu'une variable d'environnement ?</h3> <br> <br>
+                <p>J'utiliserai l'annotation <span class="var">VE</span> pour définir une variable d'environnement tout au long de cet article.<br> <br>
+
+                    Une <span class="var">VE</span> est une variable qui prend la forme de chaîne de caractères et qui est utilisé par une application
+                    afin de définir certains de ses comportements. <br> <br>
+
+                    Par exemple la variable <span class="var">HOME</span> dans votre système linux définit le chemin du répertoire personnel de l'ulisateur qui est connecté. Si vous vous loggez avec comme nom d'utilisateur "votrenom",
+                    la <span class="var">VE HOME</span> aura comme valeur, par exemple, <span class="note">/home/"votrenom"</span>. Via le terminal on peut affecter des valeurs particulières à ces variables par l'expression d'affectation <span class="span note">"="</span>.
+                    <br> <br>
+                    <span class="note">HOME=/home/amadou</span>
+                    <br> <br>
+                    En l'occurence dans Symfony, ces <span class="var">VE</span> permettent de paramétrer les options qui dépendent de l'endroit ou
+                    l'application est exécutée. Par exemple, les informations qui servent à vous identifier/connecter
+                    à votre base de données sont généralement différentes en production par rapport à  votre environnement
+                    de développement local.<br> <br>
+
+                    Dans Symfony ces variables sont utilisées avec une syntaxe bien particulière qui est la suivante :
+                    <br>  <br> <span class="note">NOM_VARIABLE_ENVIRONNEMENT</span><br> <br>
+
+                    La variable peut contenir plusieurs mots. Cependant ils doivent être liés sans espace ni ponctuation.
+                    Elles sont toujours en majuscules et peuvent contenir le tiret du bas <span class="note">"_"</span> pour lier les mots. C'est une convention de les
+                    définir de la sorte. Efforcez-vous de prendre cette habitude pour faciliter la lecture de votre code à un autre développeur. <i class="fa fa-smile-o" aria-hidden="true"></i>
+                    <br> <br>
+
+                    Passons au concret maintenant. Dans le repertoire ./config/packages de votre projet, il y'a un fichier qui se nomme swiftmailer.yml (Cf
+                    <a href="https://symfony.com/doc/current/email.html?utm_source=recordnotfound.com">la documentation</a> pour savoir à quoi sert SwiftMailer). <br> <br>
+                    <i class='fas fa-info-circle'></i> Au passage, les configurations nécessaires au bon fonctionnement
+                    de votre application seront stockés dans ce repertoire. Ils peuvent avoir plusieurs format dont le YAML, XML
+                    et le PHP. A vous de voir avec quel format vous êtes le plus à l'aise pour faire vos configurations.
+                    <br> <br>
+                    Revenons à notre fichier swiftmailer.yml ! La première ligne de configuration généré automatiquement
+                    par symfony est la suivante : <br> <br>
+                    <span class="span note">url: '%env(MAILER_URL)%'</span> <br> <br>
+                    Ce qui peut être traduit par : récupère moi la valeur de la <span class="var">VE MAILER_URL</span> et affecte cette valeur à <span class="note">url</span>. Variable qui est stocké dans notre
+                    fichier <span class="env">.env</span>. On y est.
+                    <br> <br>
+                    Vous commencez à comprendre ? <i class='fas fa-smile'></i> <br> <br>
+
+                    On comprends assez vite, qu'il est important de bien les définir ces variables
+                    afin d'éviter des erreurs dans notre système ou application. <br> <br>
+
+                    Dans le cas du framework Symfony, les <span class="var">VE</span> serviront à définir (liste non exhaustive) :<br> <br>
+                    <i class='fas fa-minus'></i> L'environnement de travail dans lequel l'application évolue. <br> <br>
+
+                    <i class='fas fa-minus'></i> Une clé de sécurité qui est unique à votre projet.<br> <br>
+                    <i class='fas fa-minus'></i> Une url pour permettre à doctrine d'avoir accès à votre base de données pour pouvoir y insérer et/ou extraire des données.<br>
+                    <br>
+                    <i class='fas fa-minus'></i> Une url pour le transfert de mail via le protocole SMTP <span class="smtp">(<span class="bold">S</span>imple <span class="bold">M</span>ail <span class="bold">T</span>ransfer <span class="bold">P</span>rotocol)</span>.<br> <br>
+
+                    Symfony a besoin que ces variables soient bien configurées pour pouvoir fonctionner correctement. Lors de la création de votre projet,
+                    Symfony vous génère automatiquement un fichier <span class="env">.env</span> avec des valeurs par défaut ! <br> <br>
+                <p>Nous allons voir dans la partie qui suit, comment bien paramétrer ces variables.</p> <br> <br>
+                <h4 class="ve">DATABASE_URL <i class='fas fa-minus'></i> APP_SECRET <i class='fas fa-minus'></i> MAILER_URL <i class='fas fa-minus'></i> APP_ENV </h4>
+                <br><p>
+                    <span class="var">DATABASE_URL</span>  <i class="far fa-question-circle"></i><br> <br>
+                    <i class='fas fa-info-circle'></i>
+                    J'utilise MySQL comme système de gestion de base de données <span class="var">SGBD</span> avec phpMyAdmin comme serveur. Dans cette configuration, votre <span class="var">VE DATABASE_URL</span> devra ressembler à ça :
+                    <br> <br><span class="note">DATABASE_URL=mysql://Nom_Utilisateur:Mot_De_Passe@Nom_ServeurOuAdresse_IP:PORT/Nom_Base_Donnee</span><br> <br>
+
+                    Si vous utilisez un autre SGBD, vous remplacez tout simplement <span class="note">mysql</span> par le nom de votre SGBD.<br> <br>
+                    En local, le nom d'utilisateur est <span class="var">root</span> par défaut. Je mets toujours un mot de passe
+                    histoire de prendre des bonnes habitudes. Si vous n'avez pas de mot de passe, vous renseignez juste la partie avec le nom d'utilsateur.
+                    Pour le nom du serveur vu qu'on est en local, ça sera par défaut
+                    <span class="span var">localhost</span>. Vous pouvez également mettre à la place du nom du serveur, votre adresse IP qui sera <span class="var">127.0.0.1</span>.
+                    Le port par défaut utilisé par MySQL est <span class="var">3306</span>. Veuillez vous référer à la documentation de votre SGBD pour connaitre le numéro de port s'il est différent.
+                    <br> <br>Au final notre <span class="var">VE</span>, ressemble à ça :
+                    <br> <br><span class="note">DATABASE_URL=mysql://root:motdepasse@localhost:3306/mabasededonnee</span>
+
+                    <br> <br>Avec ces informations, symfony se chargera automatiquement de se connecter à la BD. Bien entendu, en production, vous rentrerez les informations fournies par votre hébergeur avec votre nom d'utilisateur
+                    et mot de passe que vous aurez créés au préalable. A titre d'exemple, j'ai un hébergement chez ovh, en production, ma <span class="var">VE</span> ressemble à ça :
+                    <br> <br><span class="note">DATABASE_URL=mysql://Mon_Login:Mot_De_Passe@IP_OVH:3306/database_bachir avec IPOVH=Mon_Login.mysql.db</span>
+                    <br> <br> <hr> <br> <br>
+                <p><span class="var">APP_SECRET</span>  <i class="far fa-question-circle"></i>
+                    <br> <br>La <span class="var">VE</span> qui contient la clé de sécurité se nomme <span class="var">APP_SECRET</span>. La clé est générée automatiquement par symfony, on a pas trop besoin de la changer vu qu'elle est déjà unique.
+                    <br> <br> <hr> <br> <br>
+                <p><span class="var">MAILER_URL</span>  <i class="far fa-question-circle"></i>
+                    <br> <br>La <span class="var">VE MAILER_URL</span> définit l'url pour pouvoir envoyer des emails.
+                    L'envoie d'emails se fait via le protocole <span class="var">smtp</span>.
+                    Vous pouvez utiliser le logiciel <span class="var">MaiDev</span> pour intercepter vos mails. C'est un outil assez pratique quand on veut tester l'envie d'emails en local. L'interface graphique est très intuitive.
+                    <br> <br>Revenons à nos moutons. <br> <br>
+                    Vous venez d'installer <span class="var">MailDev</span> et il vous faut configurer votre <span class="var">VE</span>. C'est assez simple, il vous faut juste renseigner l'adresse IP et le port sur lequel <span class="var">MailDev</span> tourne.
+                    <br> <br>Tapez dans votre <span class="span var">Terminal</span> la commande <span class="span note">maildev</span>.
+                    <br> <br><img src="https://www.amadou-ndiaye.fr/img/logo/maildev.png" alt="">
+                    <br> <br> Cliquez sur <span class="note">http://0.0.0.0:1080</span>. Vous serez redirigés vers une interface graphique comme celle là :
+                    <br> <br>
+                    <img src="https://www.amadou-ndiaye.fr/img/logo/maildev2.png" alt="Interface graphique MailDev">
+                    <br> <br>
+                    La configuration dans votre fichier <span class="var">.env</span>  sera la suivante :
+                    <br> <br><span class="note">MAILER_URL=NOM_PROTOCOLE://Nom_ServeurOuAdresse_IP:PORT</span>
+                    <br> <br><span class="note">MAILER_URL=smtp://localhost:1025</span>
+                    <br> <br> Bravo ! Maintenant vous pouvez intercepter les emails. <i class="fa fa-paper-plane" aria-hidden="true"></i>
+
+
+
+                    <br> <br>Vous pouvez également utilisé votre adresse Gmail pour recevoir les mails. Il vous faudra
+                    alors configurer votre <span class="var">VE</span> de la sorte:
+                    <br> <br><span class="note">MAILER_URL=gmail://username:password@localhost</span>
+
+                    <br> <br>Notez qu'ici au lieu d'avoir <span class="note">smtp</span> au début on a <span class="note">gmail</span>.
+                    <br> <br> <hr> <br> <br>
+                <p><span class="var">APP_ENV</span>  <i class="far fa-question-circle"></i> <br> <br>
+                    Cette variable définit l'environnement dans lequel notre application évolue. Elle prends par défaut 2 valeurs.
+                    <br> <br><span class="var">DEV</span> pour le développement en local
+                    ou <span class="span var">PROD</span> pour la production i.e lorsque vous déployez votre application. En réalité, on peut définir nous même
+                    un environnement de travail. Par exemple, un environnement de <span class="span var">TEST</span> pour tester des comportements spécifiques de
+                    notre application. Après, ça sera à vous de bien configurer le tout. <br> <br>
+
+                    On arrive à la fin. <i class="fa fa-hourglass-end" aria-hidden="true"></i>
+
+                    <br> <br>Dans cet article
+                    on s'est limité qu'à quatre variables. Bien entendu il existe d'autres <span class="var">VE</span> qui sont définis par Symfony ou que vous pouvez définir vous même.
+
+                    <br> <br>Maintenant que votre fichier <span class="span var">.env</span> est bien configuré, Symfony est content car vous avez renseigné les bonnes valeurs.
+                    <br> <br> Vous pouvez utiliser la commande <span class="span note">php bin/console debug:container --env-vars</span> pour lister vos variables dans votre projet Symfony. Vous devriez avoir en sortie quelque chose qui ressemble à ça :
+                    <br> <br><img src="./img/logo/terminale_symfony.png" alt="Variables d'environnements de Symfony"> <br> <br>
+                    N'hésitez surtout pas à vous référer à la documentation technique de Symfony qui est très bien
+                    écrite. <br> <br>
+                    Si vous rencontrez des problèmes pour configurer votre fichier <span class="env">.env</span>
+                    vous pouvez toujours m'envoyer un mail. Je serai ravie de pouvoir vous aider.
+                    <br> <br>
+                </p>
+                <div class="jumbotron partage">Cet article vous a plu ? n'hésitez pas à le partager <i class="fa fa-share-alt" aria-hidden="true"></i>
+                    <br>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+{% endblock %}
+

@@ -1,0 +1,405 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+    <!-- PRELOADER
+    <div class="preloader">
+        <img src="{{ asset('img/logo/preloader.gif') }}" alt="Image de chargement pour l'attente utilisateur">
+        <div class="text-preloader">
+            <h5>
+                <br>
+                Chargement...
+            </h5>
+        </div>
+    </div>-->
+    <!-- BODY TOP CV SECTION -->
+    <section class="body-top-cv">
+    <!-- BANNER -->
+    <div class="banner-top">
+        {% for message in app.flashes('success') %}
+            <div class="container">
+                <div class="row">
+                    <div class="col flash-notice">
+                        <h2>{{ message }}<i class="fa fa-smile" aria-hidden="true"></i></h2>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+            <div class="sweet-home">
+                <div class="container-left-logo">
+                    <a href="/"><h1 id="amadou">Amadou <span class="ndiaye" id="ndiaye">NDIAYE</span></h1></a>
+                    <h1 id="dev">Développeur web junior</h1>
+                    <div class="linkedin-top">
+                        <a href="https://www.linkedin.com/in/amadoubassiroundiaye/">
+                            <i class="fab fa-linkedin"></i>
+                            </a>
+                        <a href="https://github.com/Bachir-Ndiaye/">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        <div class="container">
+            <div class="row">
+                <div class="col link-CV">
+                    <a href="https://www.amadou-ndiaye.fr/file/NDIAYE_DeveloppeurWebJunior.pdf" download="NDIAYE_Developpeur_Junior.pdf">
+                        Télécharger mon CV <i class="fas fa-download" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!--ABOUT-->
+    <section id="about">
+        <div class="about">
+            <div class="about-top">
+                <h1>À PROPOS DE MOI</h1>
+                <div class="line-portfolio"></div>
+            </div>
+
+            <div id="card">
+                <div id="gradient">
+                    <!--<div class="box-bg"></div>-->
+                    <img src="{{ asset('img/logo/bachir.jpg') }}" alt="Photo de Amadou NDIAYE">
+                    <div class="inside-gradient">
+                        <h4>Amadou B. NDIAYE</h4>
+                        <div class="box-ig">
+                            <i class='fas fa-history'></i>
+                            <p>Formation développeur web - Wild Code School</p>
+                        </div>
+                        <div class="box-ig">
+                            <i class='fas fa-history'></i>
+                            <p>Certification IT Administration d'un système Linux</p>
+                        </div>
+                        <div class="box-ig">
+                            <i class='fas fa-award'></i>
+                            <p>Bac+3 Electronique Energie Électricité Automatique</p>
+                        </div>
+                        <div class="box-ig">
+                            <i class='fas fa-award'></i>
+                            <p>Classes Préparatoires aux Grandes Écoles - PCSI/PSI</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="about-text">
+                <p>Passionné par tout ce qui touche à l'informatique depuis plus de 3 ans maintenant, je suis en apprentissage perpétuel. </p>
+                <br>
+                <p>Je fais régulièrement des veilles technologiques pour me mettre à jour
+                    par rapport aux nouvelles technologies.</p>
+                <br>
+                <p>Je développe et réalise des sites web en respectant les bonnes pratiques.</p>
+                <!--lien vers article sur veille techno de la Wild-->
+            </div>
+
+            
+
+        </div>
+    </section>
+
+    <!--Skills-->
+    <section class="competence" id="competence">
+        <!--Pre-compétences-->
+        <div class="pre-skills"></div>
+
+        <!--COMPETENCES-->
+        <div class="skills">
+            <div class="card-skills-all-right">
+                <!--Trier les compétences : integration + back-->
+                <div class="card-skill">
+                    <div class="skill-area">
+                        <img src="{{ asset('img/logo/html.png') }}" alt="HTML logo">
+                        <div class="skill html">HTML</div>
+                    </div>
+                </div>
+                <div class="card-skill">
+                    <div class="skill-area">
+                        <img src="{{ asset('img/logo/css.jpg') }}" alt="HTML logo">
+                        <div class="skill css">CSS</div>
+                    </div>
+                </div>
+                <div class="card-skill">
+                    <div class="skill-area">
+                        <img src="{{ asset('img/logo/js.png') }}" alt="HTML logo">
+                        <div class="skill js">JS</div>
+                    </div>
+                </div>
+                <div class="card-skill">
+                    <div class="skill-area">
+                        <img src="{{ asset('img/logo/php.png') }}" alt="HTML logo">
+                        <div class="skill php">PHP</div>
+                    </div>
+                </div>
+                <div class="card-skill">
+                    <div class="skill-area">
+                        <img src="{{ asset('img/logo/sql.png') }}" alt="HTML logo">
+                        <div class="skill sql">SQL</div>
+                    </div>
+                </div>
+                <div class="card-skill">
+                    <div class="skill-area">
+                        <img src="{{ asset('img/logo/symfony.jpg') }}" alt="HTML logo">
+                        <div class="skill symfony">SYMFONY</div>
+                    </div>
+                </div>
+                <div class="card-skill">
+                    <div class="skill-area">
+                        <img src="{{ asset('img/logo/twig.png') }}" alt="HTML logo">
+                        <div class="skill twig">TWIG</div>
+                    </div>
+                </div>
+                <div class="card-skill">
+                    <div class="skill-area">
+                        <img src="{{ asset('img/logo/canva.png') }}" alt="HTML logo">
+                        <div class="skill canva">CANVA</div>
+                    </div>
+                </div>
+                <div class="card-skill">
+                    <div class="skill-area">
+                        <img src="{{ asset('img/logo/linux.jpeg') }}" alt="HTML logo">
+                        <div class="skill linux">LINUX</div>
+                    </div>
+                </div>
+                <div class="card-skill">
+                    <div class="skill-area">
+                        <img src="{{ asset('img/logo/clickup.png') }}" alt="HTML logo">
+                        <div class="skill clickup">CLICK UP</div>
+                    </div>
+                </div>
+                <div class="card-skill">
+                    <div class="skill-area">
+                        <img src="{{ asset('img/logo/clickup.png') }}" alt="HTML logo">
+                        <div class="skill clickup">METHODE AGILE</div>
+                    </div>
+                </div>
+
+            <!--chart sur ma manière de travailler + les outils que j'utilise pour développer-->
+            </div>
+            <div class="chart-all">
+                <div class="chart">
+                    <img src="{{ asset('img/charge.png') }}">
+                    <div class="dashed"></div>
+                    <div class="chart-line"></div>
+                    <h2>1</h2>
+                    <h6>Cahier des charges</h6>
+                    <p>Faire une liste complète contenant toutes les demandes du client</p>
+                </div>
+                <div class="chart">
+                    <img src="{{ asset('img/architect.png') }}">
+                    <div class="dashed"></div>
+                    <div class="chart-line"></div>
+                    <h2>2</h2>
+                    <h6>Architecture</h6>
+                    <p>Choisir les technologies à intégrer sur la stack de développement en fonction des besoins du client</p>
+                </div>
+                <div class="chart">
+                    <img src="{{ asset('img/plan.png') }}">
+                    <div class="dashed"></div>
+                    <div class="chart-line"></div>
+                    <h2>3</h2>
+                    <h6>Plannification</h6>
+                    <p>Via l'agilité, définir un calendrier des tâches jusqu'à livraison finale</p>
+                </div>
+                <div class="chart">
+                    <img src="{{ asset('img/search.png') }}">
+                    <div class="dashed"></div>
+                    <div class="chart-line"></div>
+                    <h2>4</h2>
+                    <h6>Développement</h6>
+                    <p>Développement de toutes les fonctionnalités dont le site web a besoin suivi d'une phase de tests</p>
+                </div>
+                <div class="chart">
+                    <img src="{{ asset('img/delivery.png') }}">
+                    <div class="dashed"></div>
+                    <div class="chart-line"></div>
+                    <h2>5</h2>
+                    <h6>Livraison</h6>
+                    <p>Validation du site par le client</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Portfolio-->
+    <section class="section-project" id="portfolio">
+        <header class="portfolio-header">
+            <div class="container-fluid">
+                <h1>MON PORTFOLIO</h1>
+                <div class="line-portfolio"></div>
+            </div>
+        </header>
+
+        <div class="tripler-head">
+            <h5>TOUS MES PROJECTS</h5>
+            <h5>INTEGRATION</h5>
+            <h5>BACK END</h5>
+            <h5>SITE WEB</h5>
+        </div>
+
+        <div class="portfolio-cards-all">
+            <div class="portoflio-card">
+                <p><a href="#"><i class="fab fa-github"></i> FindXLyon</a></p>
+                <img src="{{ asset('img/portfolio/findxlyon.png') }}">
+                <div class="portfolio-text">
+                    <i class="fa fa-globe"></i>
+                    <p>SITE WEB</p>
+                </div>
+            </div>
+            <div class="portoflio-card">
+                <p><a href="#"><i class="fab fa-github"></i> Formulaire</a></p>
+                <img src="{{ asset('img/portfolio/form.png') }}">
+                <div class="portfolio-text">
+                    <i class="fa fa-code"></i>
+                    <p>INTEGRATION</p>
+                </div>
+            </div>
+            <div class="portoflio-card">
+                <p><a href="#"><i class="fab fa-github"></i> FindXLyon</a></p>
+                <img src="https://fakeimg.pl/250x250/">
+                <div class="portfolio-text">
+                    <i class="fa fa-database"></i>
+                    <p>BACK END</p>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="project">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md">
+                        <h4>Project en cours de développement</h4>
+                        <div class="img-work">
+                            <a href="https://www.lacitemusicale.fr/"><img src="{{ asset('img/logo/logo_black.png') }}" alt="Logo la cité musicale"></a>
+                        </div>
+                        <div class="text-work">
+                            <h3>LA CITE MUSICALE</h3>
+                            <div class="line-work"></div>
+                            <p class="creation">Création et développement web COMPLET</p>
+                            <p class="creation">Site web <span><a href="https://www.lacitemusicale.fr/">www.lacitemusicale.fr </a></span>   pour l'association qui porte le même nom et qui évolue dans le milieu musical.
+                                <br> Basée sur Carcassonne. </p>
+                            <div class="line-work"></div>
+                            <div class="validation">
+                                <div class="text-validation figma">
+                                    <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                    <p>Maquette de design avec l'outil <a href="https://www.figma.com/">FIGMA</a></p>
+                                    <img src="https://www.amadou-ndiaye.fr/img/logo/figma.svg" alt="logo figma">
+                                </div>
+                                <div class="text-validation html-css">
+                                    <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                    <p>Intégration avec HMTL/TWIG et CSS</p>
+                                    <img src="https://www.amadou-ndiaye.fr/img/logo/html-css.png" alt="logo html css">
+                                </div>
+                                <div class="text-validation">
+                                    <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                    <p>Référencement naturel SEO - <span>Google Search Console</span> </p>
+                                </div>
+                                <div class="text-validation ovh">
+                                    <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                    <p>Hébergement et nom de domaine chez <a href="https://www.ovh.com/fr/">OVH</a></p>
+                                    <img src="https://www.amadou-ndiaye.fr/img/logo/ovh.png" alt="logo ovh">
+                                </div>
+                                <div class="text-validation symfony">
+                                    <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                    <p>Framework de développement - <span>SYMFONY</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <!--Contact-->
+    <section class="contact" id="contact">
+        <div class="contact">
+            <div class="contact-top">
+                <h1>ME CONTACTER ?</h1>
+                <div class="line-portfolio"></div>
+            </div>
+            <div class="contact-body">
+                <div class="contact-left">
+                    <div class="box-contact">
+                        <div class="b-top">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <p>ADRESSE</p>
+                        </div>
+                        <p>181, rue de la Chapelle 69390 VERNAISON</p>
+                    </div>
+                    <div class="box-contact">
+                        <div class="b-top">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <p>TÉLÉPHONE</p>
+                        </div>
+                        <p>(+33) 6 12 28 06 72</p>
+                    </div>
+                    <div class="box-contact">
+                        <div class="b-top">
+                            <i class="fa fa-at" aria-hidden="true"></i>
+                            <p>E-MAIL</p>
+                        </div>
+                        <p>amadou.n-diaye@hotmail.com</p>
+                    </div>
+                    <div class="box-contact">
+                        <div class="b-top">
+                            <i class="fas fa-clock-o" aria-hidden="true"></i>
+                            <p>HORAIRES</p>
+                        </div>
+                        <p>Lundi - Samedi</p>
+                        <p>09h - 12h30 | 13h30 - 18h</p>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form action="#" method="POST">
+                        <p>
+                            <label for="firstname"></label>
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <input type="text" id="firstname" name="firstname" placeholder="Nom" required>
+                        </p>
+
+                        <p>
+                            <label for="lastname"></label>
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <input type="text" id="lastname" name="lastname" placeholder="Prénom" required>
+                        </p>
+
+                        <p>
+                            <label for="email"></label>
+                            <i class="fa fa-at" aria-hidden="true"></i>
+                            <input type="email" id="email" name="email" placeholder="Adresse e-mail" required>
+                        </p>
+
+                        <p>
+                            <label for="phone"></label>
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <input type="phone" id="phone" name="phone" placeholder="Numéro de téléphone" required>
+                        </p>
+
+
+                        <p>
+                            <label for="msg"></label>
+                            <textarea id="msg" name="msg" placeholder="Votre message" required></textarea>
+                        </p>
+                        <p>
+                            <input type="checkbox" name="check" value="check">
+                            <label for="check" id="check"> Message disant aux users...</label><br>
+                        </p>
+
+                        <button type="submit">Envoyer</button>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+{% endblock %}

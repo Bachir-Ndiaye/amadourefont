@@ -1,0 +1,2 @@
+#!/bin/sh
+rsync -av ./ lacitet@ssh.cluster028.hosting.ovh.net:~/www/ndiaye

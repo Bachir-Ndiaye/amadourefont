@@ -1,0 +1,10 @@
+swiftmailer:
+    #url: '%env(MAILER_URL)%'
+        transport: smtp
+        auth_mode: login
+        port: 465
+        host: ssl0.ovh.net
+        username: amadou-ndiaye@lacitemusicale.fr
+        password: 'Mercury13579.'
+        spool: { type: 'memory' }
+
